@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form with Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        
+        <!-- Error Messages -->
+        <div id="errorMessages" class="error-box"></div>
+        
+        <!-- Main Form -->
+        <form id="contactForm" method="POST" action="submit.php">
+            
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name">
+            </div>
+            
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email (example@gmail.com)">
+            </div>
+            
+            <!-- Phone Number Input -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter 10-digit phone number">
+            </div>
+            
+            <!-- Message Textarea -->
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+            </div>
+            
+            <!-- Preferred Contact Method (Radio Buttons) -->
+            <div class="form-group">
+                <label>Preferred Contact Method:</label>
+                <div class="radio-group">
+                    <input type="radio" id="email-contact" name="contact-method" value="email">
+                    <label for="email-contact">Email</label>
+                    
+                    <input type="radio" id="phone-contact" name="contact-method" value="phone">
+                    <label for="phone-contact">Phone</label>
+                    
+                    <input type="radio" id="sms-contact" name="contact-method" value="sms">
+                    <label for="sms-contact">SMS</label>
+                </div>
+            </div>
+            
+            <!-- Inquiry Type (Dropdown) -->
+            <div class="form-group">
+                <label for="inquiry-type">Inquiry Type:</label>
+                <select id="inquiry-type" name="inquiry-type">
+                    <option value="">Select an inquiry type</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Customer Support</option>
+                    <option value="sales">Sales Question</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="button" id="previewBtn" class="btn btn-preview">Preview</button>
+                <button type="submit" id="submitBtn" class="btn btn-submit">Submit</button>
+                <button type="reset" class="btn btn-reset">Clear</button>
+            </div>
+        </form>
+        
+        <!-- Preview Section -->
+        <div id="previewSection" class="preview-section hidden">
+            <h2>Preview Your Information</h2>
+            <div id="previewContent" class="preview-content"></div>
+            <button type="button" id="closePreviewBtn" class="btn btn-close">Close Preview</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
